@@ -1,0 +1,66 @@
+\documentclass[a4paper]{article} % a4paper (A4), letterpaper (US Letter), or whatever
+
+% For overlaying signature image on a PDF
+% Note: Starting in v1.1, pdfoverlay replaces deprecated \c_zero by \c_zero_int. Update your TeX
+% distribution or use pdfoverlay v1.0 (https://git.io/JfnPb) if you encounter relevant error message.
+\usepackage{pdfoverlay}
+
+% For placing boxes at desired positions on the page
+\usepackage[absolute,overlay]{textpos}
+% Each module is 1cm wide and 1cm high and start everything at the top-left corner
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{0cm}{0cm}
+
+\pagestyle{empty}
+
+
+% NOTE: Uncomment this package to draw a horizontal and a vertical ruler on the page at absolute
+% position, so that it is easier to work out the coordinates where you want to insert a signature.
+% Comment out this package to create a clean signed PDF file after inserting your signature as desired.
+%\usepackage{fgruler}
+
+\begin{document}
+
+% Specify the PDF file for signature
+% NOTE: To avoid losing existing PDF annotations/markups, please flatten your PDF file first.
+% Linux/macOS user: Use `pdftocairo` tool and run: pdftocairo -pdf input.pdf output.pdf
+% Windows user: Print the PDF file using a PDF printer e.g. Adobe and choose to include the markups.
+\pdfoverlaySetPDF{example.pdf}
+
+% Sign on the first page
+% Use `textblock` to state where the signature is to be placed.
+% E.g., this block (signature) is 3 modules wide (i.e., 3cm), and the center ([0.5,0.5]) of the block
+% is positioned at (5cm,24cm) relative to top-left corner of the page (move right, move down).
+% Note: Use `fgruler` package above to help you work out the coordinates efficiently.
+\begin{textblock}{3}[0.5,0.5](5,24)
+\includegraphics[width=3cm]{signature/zhangsan.pdf}
+\end{textblock}
+
+% Add date with textblock or any PDF annotation tool you like.
+\begin{textblock}{3}[0.5,0.5](15,24)
+\today
+\end{textblock}
+
+%Output all pages in the PDF file up until the specified page number
+\pdfoverlayIncludeToPage{2}
+
+% Sign on page 2
+\begin{textblock}{3}[0.5,0.5](11.5,22.5)
+\includegraphics[width=3cm]{signature/johnsmith.pdf}
+\end{textblock}
+
+% Put multiple signatures on one page
+\begin{textblock}{2}[0.5,0.5](11.5,24.5)
+\includegraphics[width=2cm]{signature/lisi.pdf}
+\end{textblock}
+
+% Output all remaining pages in the PDF file
+\pdfoverlayIncludeToLastPage
+
+% Sign on the last page
+\begin{textblock}{3}[0.5,0.5](5,24)
+\includegraphics[width=3cm]{signature/signature.pdf}
+\end{textblock}
+
+\end{document}
