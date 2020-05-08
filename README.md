@@ -71,8 +71,8 @@ The main file is `signpdf.tex`, from which a number of other files are included.
 To compile, simply run `signpdf.tex` through `XeLaTeX`.
 
 ## Caveat
-All kinds of links and other PDF annotations contained within original PDF file will get lost during inclusion. The cause is more in the way PDF works. See [1](https://tex.stackexchange.com/a/337927/28977) and [2](https://tex.stackexchange.com/a/26139/28977). 
-- To avoid losing existing PDF annotations/markups, please flatten your PDF file first, several workarounds are available: [3](https://tex.stackexchange.com/a/124361/28977), [4](https://documentation.its.umich.edu/node/1311), [5](https://tex.stackexchange.com/a/218818/28977), and [6](https://tex.stackexchange.com/a/443914/28977).
+All kinds of links and other PDF annotations contained within original PDF file will get lost during inclusion. The cause is more in the way PDF works. See [1](https://tex.stackexchange.com/a/337927) and [2](https://tex.stackexchange.com/a/26139). 
+- To avoid losing existing PDF annotations/markups, please flatten your PDF file first, several workarounds are available: [3](https://tex.stackexchange.com/a/124361), [4](https://documentation.its.umich.edu/node/1311), [5](https://tex.stackexchange.com/a/218818), and [6](https://tex.stackexchange.com/a/443914).
 - Up to now there are no ideal solution available that can preserve hyperlinks in included PDF. Try to sign certain pages first, then insert these pages back to your main PDF using raw PDF tools like pdftk which concatenate PDF files.
  
 ## License
