@@ -59,10 +59,12 @@ A working example of signing a PDF document with LaTeX is given below. Signed PD
 
 ## How to use
 
-You need a reasonably recent TeX installation. The following packages should be installed (newer versions should also work):
- - `pdfoverlay` (version 1.1 for TexLive 2020, or version 1.0 for earlier TexLive versions)
- - `textpos`
- - `fgruler` (optional)
+* You'll need to create a vector-based version of your signature file. Simply google, "convert a signature to a vector" and you'll get step by step instructions on how to vectorize your own signature.
+
+* You'll need to have a reasonably recent TeX installation. The following packages should be installed (newer versions should also work):
+  - `pdfoverlay` (version 1.1 for TexLive 2020, or version 1.0 for earlier TexLive versions)
+  - `textpos`
+  - `fgruler` (optional)
 
 The main file is `signpdf.tex`, from which a number of other files are included. Take a look at the comments in the LaTeX sources for some more specific pointers.
 
