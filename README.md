@@ -72,5 +72,10 @@ Compile by running `signpdf.tex` through `pdfLaTeX` or `XeLaTeX`.
 ## Caveat
 Links and other PDF annotations in the original PDF file will be lost during the inclusion process due to the nature of PDF handling ([1](https://tex.stackexchange.com/a/337927), [2](https://tex.stackexchange.com/a/26139)). To preserve existing PDF annotations, flatten the PDF first using available workarounds ([3](https://tex.stackexchange.com/a/124361), [4](https://documentation.its.umich.edu/node/1311), [5](https://tex.stackexchange.com/a/218818), [6](https://tex.stackexchange.com/a/443914)). Currently, no perfect solutions exist for preserving hyperlinks in included PDFs. Consider signing specific pages first and then reinserting them into your main PDF using PDF manipulation tools like pdftk, which can concatenate PDF files ([7](http://blog.bharatbhole.com/inserting-pages-from-an-external-pdf-document-within-a-latex-document/)).
 
+## Alternative
+
+For macOS users seeking a more straightforward solution, consider the [Tiny PDF Editor - PDF Signer](https://apps.apple.com/us/app/tiny-pdf-editor-pdf-signer/id445159317) app. This app allows you to add vector digital signatures to PDF documents while maintaining high quality. It is free to download, with a US$4.99 fee to remove the watermark. Please note that I have no affiliation with this app; it is recommended purely based on its functionality.
+
+
 ## License
 `SignPDF` is distributed under the LaTeX Project Public License (version 1.3c).
